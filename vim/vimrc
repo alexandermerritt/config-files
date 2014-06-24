@@ -1,0 +1,74 @@
+" File:     .vimrc
+" Author:   Alex Merritt
+
+"===-------------------------------------------------------------------------===
+" Vundle options        github.com/gmarik/Vundle.vim
+"===-------------------------------------------------------------------------===
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_server_use_vim_stdout = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'Valloric/YouCompleteMe'
+filetype plugin indent on     " required
+
+"===-------------------------------------------------------------------------===
+" Alex's options
+"===-------------------------------------------------------------------------===
+
+" Sanity options
+set backspace=2 " make backspace work like most other apps
+set backspace=indent,eol,start
+
+" Indentation options
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set textwidth=80
+set wrap
+set cindent
+
+" File viewing options
+set number
+
+" Coloring options
+syntax on
+set bg=dark
+"set t_Co=256
+"colo moss
+"colo default
+
+" Folding options
+"set foldmethod=syntax
+"set foldcolumn=4
+"au BufWinEnter * silent loadview    " save a view upon exit
+"au BufWinLeave * mkview             " load a view upon open
+
+" Crosshair options
+"set cursorline
+"set cursorcolumn
+"highlight CursorLine cterm=none ctermbg=238
+"highlight CursorColumn ctermbg=20
+
+set hlsearch
+
+" Useful key mappings
+
+" Swap current character with next
+nnoremap <silent> gc xph
+
+" Swap current word with next (works across new lines).
+nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
+
+" YouCompleteMe. Resetart server.
+nnoremap <F4> :YcmRestartServer<CR>:cs reset<CR><CR>
+
+" Rebuild and reload cscope.out
+nnoremap <F5> :!cscope -R -b<CR>:cs reset<CR><CR>
+

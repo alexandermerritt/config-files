@@ -1,0 +1,43 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory autocd extendedglob nomatch notify
+unsetopt beep
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/alex/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+#
+# Alex's customizations
+#
+
+export PS1='%n@%m %B%(0?.%F{green}.%F{red})%?%f%b %F{6}%2d%f %# '
+export PATH=$PATH:/home/merrital/local/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:local/lib
+
+# [company] proxies
+PROXY_URL=''
+#export http_proxy=$PROXY_URL
+#export https_proxy=$PROXY_URL
+#export ftp_proxy=$PROXY_URL
+
+# key bindings
+bindkey -v
+bindkey '\e[3~' delete-char
+bindkey '^R' history-incremental-search-backward
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^K' kill-line
+bindkey '^Y' yank
+
+# Git stuff
+source ~/.git-prompt.sh
+setopt PROMPT_SUBST
+export PS1='%n@%m %B%(0?.%F{green}.%F{red})%?%f%b %F{6}%2d%f %#$(__git_ps1 " (%s)") '
+

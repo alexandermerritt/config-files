@@ -1,0 +1,12 @@
+[user]
+	name = Alexander Merritt
+	email = merritt.alex@gatech.edu
+[core]
+	editor = vim
+	gitproxy = gitproxy
+[color]
+	ui = true
+[push]
+	default = simple
+# [http]
+#   proxy = (put proxy here)

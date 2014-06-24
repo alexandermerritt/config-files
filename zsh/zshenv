@@ -1,0 +1,36 @@
+# Command aliases
+alias ls='/bin/ls --color=tty -p'
+alias ll='ls -l'
+alias lal='ls -al'
+alias grep='grep --color=tty'
+alias egrep='egrep --color=tty'
+alias R='R --no-save --quiet'
+
+alias awksum='awk "{sum+=\$1} END {print sum}"'
+
+# Global aliases
+alias -g ZKjars='/usr/share/java/zookeeper.jar:/usr/share/java/slf4j-api.jar:/usr/share/java/slf4j-jdk14.jar:/usr/share/java/log4j-1.2.jar'
+
+alias -g bfc221='221-1.bfc.hpl.hp.com'
+alias -g bfc222='222-1.bfc.hpl.hp.com'
+alias -g bfc223='223-1.bfc.hpl.hp.com'
+
+# Various functions
+function c() {
+    cd $@ && ls
+}
+
+function mkcd() {
+    mkdir $@ && cd $1
+}
+
+function startzk() {
+    sudo java -cp ZKjars org.apache.zookeeper.server.quorum.QuorumPeerMain $@
+}
+
+function csbld() {
+    rm -f cscope.files
+    find . -type f | egrep '\.([ch]pp|[ch]|cu|cc)$' >> cscope.files
+    cscope -b
+}
+
