@@ -69,6 +69,9 @@ nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:
 " YouCompleteMe. Resetart server.
 nnoremap <F4> :YcmRestartServer<CR>:cs reset<CR><CR>
 
-" Rebuild and reload cscope.out
-nnoremap <F5> :!cscope -R -b<CR>:cs reset<CR><CR>
+" Rebuild and reload cscope.out (assumes cscope.files exists)
+nnoremap <F5> :!cscope -b<CR>:cs reset<CR><CR>
+
+" Force YCM to restart itself
+nnoremap <F6> YcmForceCompileAndDiagnostics<CR>:YcmRestartServer<CR>
 
