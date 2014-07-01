@@ -1,6 +1,6 @@
 [user]
 	name = Alexander Merritt
-	email = merritt.alex@gatech.edu
+	email = abc@def.org
 [core]
 	editor = vim
 	gitproxy = gitproxy
