@@ -18,8 +18,8 @@ compinit
 #
 
 export PS1='%n@%m %B%(0?.%F{green}.%F{red})%?%f%b %F{6}%2d%f %# '
-export PATH=$PATH:/home/merrital/local/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:local/lib
+export PATH=$PATH:$HOME/bin:$HOME/local/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/lib
 
 # [company] proxies
 PROXY_URL=''
