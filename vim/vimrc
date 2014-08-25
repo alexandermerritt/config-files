@@ -7,15 +7,18 @@
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_server_use_vim_stdout = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
+
+set rtp+=~/.vim/bundle/Vundle.vim   " required
+call vundle#begin() " required
+Plugin 'gmarik/Vundle.vim'  " required
+Plugin 'Valloric/YouCompleteMe'
+call vundle#end()   " required
 filetype plugin indent on     " required
 
 "===-------------------------------------------------------------------------===
